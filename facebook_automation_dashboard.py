@@ -56,17 +56,17 @@ def user_login_facebook(username, password):
 
     opts = FirefoxOptions()
     opts.add_argument("--headless")
-    browser = webdriver.Firefox(options=opts)
+    #browser = webdriver.Firefox(options=opts)
 
 
-    browser.get("http://www.facebook.com")
-    browser.maximize_window()
-    username_elem = browser.find_element(By.ID, "email")
-    password_elem = browser.find_element(By.ID, "pass")
-    button = browser.find_element(By.CSS_SELECTOR, 'button[data-testid="royal_login_button"]')
-    username_elem.send_keys(username)
-    password_elem.send_keys(password)
-    button.click()
+    #browser.get("http://www.facebook.com")
+    #browser.maximize_window()
+    #username_elem = browser.find_element(By.ID, "email")
+    #password_elem = browser.find_element(By.ID, "pass")
+    #button = browser.find_element(By.CSS_SELECTOR, 'button[data-testid="royal_login_button"]')
+    #username_elem.send_keys(username)
+    #password_elem.send_keys(password)
+    #button.click()
     st.success("Login successful!")
     #input_text=st.text_input("Enter content key words ")
 
