@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import facebook
 from monsterapi import client
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.chrome.options import Options
 import requests
 import os
@@ -11,12 +12,12 @@ import chromedriver_autoinstaller
 
 
 
-def install_chrome_driver():
-    # Automatically download and install ChromeDriver
-    chromedriver_autoinstaller.install()
+def install_ff():
+    os.system('sbase install geckobrowser')
+    os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/browsers/geckobrowser /home/appuser/venv/bin/geckobrowser')
 
-    
-install_chrome_driver()
+install_ff()
+
 
 if 'button1_clicked' not in st.session_state:
     st.session_state.button1_clicked = False
@@ -39,17 +40,23 @@ def main_page():
 
 #facebook login automation
 def user_login_facebook(username, password):
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    prefs = {"profile.default_content_setting_values.notifications": 2}
-    chrome_options.add_experimental_option("prefs", prefs)
+    #chrome_options = webdriver.ChromeOptions()
+    #chrome_options.add_argument("--headless")
+    #prefs = {"profile.default_content_setting_values.notifications": 2}
+    #chrome_options.add_experimental_option("prefs", prefs)
 
     # chrome driver
     
-    chrome_driver_path = 'C:\\Users\\srija\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe'
-    service = Service(chrome_driver_path)
+    #chrome_driver_path = 'C:\\Users\\srija\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe'
+    #service = Service(chrome_driver_path)
+    #service = Service()
     #browser = webdriver.Chrome(service=service, options=chrome_options)
-    browser = webdriver.Chrome()
+    #browser = webdriver.Chrome()
+
+
+    opts = FirefoxOptions()
+    opts.add_argument("--headless")
+    browser = webdriver.Firefox(options=opts)
 
 
     browser.get("http://www.facebook.com")
