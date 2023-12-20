@@ -69,6 +69,5 @@ validators==0.22.0
 watchdog==3.0.0
 wsproto==1.2.0
 zipp==3.17.0
-seleniumbase
 webdriver-manager==4.0.1
 
