@@ -14,7 +14,7 @@ import chromedriver_autoinstaller
 
 def install_ff():
     os.system('sbase install geckobrowser')
-    os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/browsers/geckobrowser /home/appuser/venv/bin/geckobrowser')
+    os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
 install_ff()
 
